@@ -1,17 +1,30 @@
 import express from "express";
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 import dotenv from "dotenv";
+import mysql from "mysql";
 
 dotenv.config();
 
-mongoose
-  .connect(process.env.MONGO)
-  .then(() => {
-    console.log('MongoDb is connected');
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+const conn = mysql.createConnection({
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+});
+
+conn.connect((err) => {
+  if (err) {
+    console.log("Error connecting: " + err);
+  }
+
+  console.log("MySQL is connected");
+});
+
+conn.end();
+
+// mongoose
+//   .connect(process.env.MONGO)
+//   .then(() => console.log("MongoDB is connected"))
+//   .catch((err) => console.log(err));
 
 const app = express();
 const port = 3000;
