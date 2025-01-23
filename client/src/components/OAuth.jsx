@@ -16,6 +16,10 @@ export default function OAuth() {
     provider.setCustomParameters({ prompt: "select_account" });
     try {
       const resultsFromGoogle = await signInWithPopup(auth, provider);
+<<<<<<< HEAD
+=======
+      console.log(resultsFromGoogle);
+>>>>>>> 2762b21 (add create a post api route)
       const res = await fetch("/api/auth/google", {
         method: "POST",
         headers: {
@@ -41,8 +45,12 @@ export default function OAuth() {
       type="button"
       gradientDuoTone="pinkToOrange"
       outline
+<<<<<<< HEAD
       onClick={handleGoogleClick}
     >
+=======
+      onClick={handleGoogleClick}>
+>>>>>>> 2762b21 (add create a post api route)
       <AiFillGoogleCircle className="w-6 h-6 mr-2" />
       Continue with Google
     </Button>

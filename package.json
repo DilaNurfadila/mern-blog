@@ -16,6 +16,10 @@
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
+<<<<<<< HEAD
+=======
+    "firebase": "^11.1.0",
+>>>>>>> 2762b21 (add create a post api route)
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.1",
     "mysql": "^2.18.1",
